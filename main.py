@@ -22,7 +22,17 @@ def insertion_sort(arr: list) -> None:
         arr: list to be sorted (modified in-place)
     """
     # Replace the code below with your implementation
-    raise NotImplementedError
+    if len(arr) <= 1:
+        return arr
+    
+    for i in range(1, len(arr)):
+        value = arr[i]
+        for j in range(i):
+            if value < arr[j]:
+                arr.pop(i)
+                arr.insert(j, value)
+                break
+    return arr
 
 
 def merge_sort(arr: list) -> list:
